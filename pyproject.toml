@@ -1,0 +1,40 @@
+[build-system]
+requires = ["hatchling>=1.12"]
+build-backend = "hatchling.build"
+
+[project]
+name = "dnb-marketing-langgraph"
+version = "0.1.0"
+description = "Marketing automation workflows built with LangGraph"
+readme = "README.md"
+authors = [{ name = "DNB", email = "devnull@example.com" }]
+requires-python = ">=3.10"
+dependencies = [
+  "fastapi>=0.110",
+  "uvicorn[standard]>=0.27",
+  "streamlit>=1.32",
+  "langgraph>=0.0.56",
+  "langchain>=0.1",
+  "azure-identity>=1.15",
+  "azure-storage-blob>=12.19"
+]
+
+[project.optional-dependencies]
+test = [
+  "pytest>=8.0",
+]
+typecheck = [
+  "mypy>=1.8",
+]
+lint = [
+  "ruff>=0.2",
+]
+
+[tool.ruff]
+line-length = 100
+
+[tool.mypy]
+python_version = "3.10"
+ignore_missing_imports = true
+warn_unused_configs = true
+
